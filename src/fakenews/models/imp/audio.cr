@@ -1,79 +1,77 @@
 class Audio
-  JSON.mapping(
-    mimes: Any,
-    # string array; required
-    # Content MIME types supported (e.g., “audio/mp4”).
+  # string array; required
+  # Content MIME types supported (e.g., “audio/mp4”).
+  property mimes : Any
 
-    minduration: Any,
-    # integer; recommended
-    # Minimum audio ad duration in seconds.
+  # integer; recommended
+  # Minimum audio ad duration in seconds.
+  property minduration : Any
 
-    maxduration: Any,
-    # integer; recommended
-    # Maximum audio ad duration in seconds.
+  # integer; recommended
+  # Maximum audio ad duration in seconds.
+  property maxduration : Any
 
-    protocols: Any,
-    # integer array; recommended
-    # Array of supported audio protocols. Refer to List 5.8.
+  # integer array; recommended
+  # Array of supported audio protocols. Refer to List 5.8.
+  property protocols : Any
 
-    startdelay: Any,
-    # integer; recommended
-    # Indicates the start delay in seconds for pre-roll, mid-roll, or post-roll ad placements. Refer to List 5.12.
+  # integer; recommended
+  # Indicates the start delay in seconds for pre-roll, mid-roll, or post-roll ad placements. Refer to List 5.12.
+  property startdelay : Any
 
-    sequence: Any,
-    # integer
-    # If multiple ad impressions are offered in the same bid request, the sequence number will allow for the coordinated delivery of multiple creatives.
+  # integer
+  # If multiple ad impressions are offered in the same bid request, the sequence number will allow for the coordinated delivery of multiple creatives.
+  property sequence : Any
 
-    battr: Any,
-    # integer array
-    # Blocked creative attributes. Refer to List 5.3.
+  # integer array
+  # Blocked creative attributes. Refer to List 5.3.
+  property battr : Any
 
-    maxextended: Any,
-    # integer
-    # Maximum extended ad duration if extension is allowed. If blank or 0, extension is not allowed. If -1, extension is allowed, and there is no time limit imposed. If greater than 0, then the value represents the number of seconds of extended play supported beyond the maxduration value.
+  # integer
+  # Maximum extended ad duration if extension is allowed. If blank or 0, extension is not allowed. If -1, extension is allowed, and there is no time limit imposed. If greater than 0, then the value represents the number of seconds of extended play supported beyond the maxduration value.
+  property maxextended : Any
 
-    minbitrate: Any,
-    # integer
-    # Minimum bit rate in Kbps.
+  # integer
+  # Minimum bit rate in Kbps.
+  property minbitrate : Any
 
-    maxbitrate: Any,
-    # integer
-    # Maximum bit rate in Kbps.
+  # integer
+  # Maximum bit rate in Kbps.
+  property maxbitrate : Any
 
-    delivery: Any,
-    # integer array
-    # Supported delivery methods (e.g., streaming, progressive). If none specified, assume all are supported. Refer to List 5.15.
+  # integer array
+  # Supported delivery methods (e.g., streaming, progressive). If none specified, assume all are supported. Refer to List 5.15.
+  property delivery : Any
 
-    companionad: Any,
-    # object array
-    # Array of Banner objects (Section 3.2.6) if companion ads are available.
+  # object array
+  # Array of Banner objects (Section 3.2.6) if companion ads are available.
+  property companionad : Any
 
-    api: Any,
-    # integer array
-    # List of supported API frameworks for this impression. Refer to List 5.6. If an API is not explicitly listed, it is assumed not to be supported.
+  # integer array
+  # List of supported API frameworks for this impression. Refer to List 5.6. If an API is not explicitly listed, it is assumed not to be supported.
+  property api : Any
 
-    companiontype: Any,
-    # integer array
-    # Supported DAAST companion ad types. Refer to List 5.14. Recommended if companion Banner objects are included via the companionad array.
+  # integer array
+  # Supported DAAST companion ad types. Refer to List 5.14. Recommended if companion Banner objects are included via the companionad array.
+  property companiontype : Any
 
-    maxseq: Any,
-    # integer
-    # The maximum number of ads that can be played in an ad pod.
+  # integer
+  # The maximum number of ads that can be played in an ad pod.
+  property maxseq : Any
 
-    feed: Any,
-    # integer
-    # Type of audio feed. Refer to List 5.16.
+  # integer
+  # Type of audio feed. Refer to List 5.16.
+  property feed : Any
 
-    stitched: Any,
-    # integer
-    # Indicates if the ad is stitched with audio content or delivered independently, where 0 = no, 1 = yes.
+  # integer
+  # Indicates if the ad is stitched with audio content or delivered independently, where 0 = no, 1 = yes.
+  property stitched : Any
 
-    nvol: Any,
-    # integer
-    # Volume normalization mode. Refer to List 5.17.
+  # integer
+  # Volume normalization mode. Refer to List 5.17.
+  property nvol : Any
 
-    ext: Any,
-    # object
-    # Placeholder for exchange-specific extensions to OpenRTB.
-)
+  # object
+  # Placeholder for exchange-specific extensions to OpenRTB.
+  property ext : Any
 end

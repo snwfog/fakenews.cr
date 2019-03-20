@@ -1,113 +1,111 @@
 class Video
-  JSON.mapping(
-    mimes: Any,
-    # string array; required
-    # Content MIME types supported (e.g., “video/x-ms-wmv”, “video/mp4”).
+  # string array; required
+  # Content MIME types supported (e.g., “video/x-ms-wmv”, “video/mp4”).
+  property mimes : Any
 
-    minduration: Any,
-    # integer; recommended
-    # Minimum video ad duration in seconds.
+  # integer; recommended
+  # Minimum video ad duration in seconds.
+  property minduration : Any
 
-    maxduration: Any,
-    # integer; recommended
-    # Maximum video ad duration in seconds.
+  # integer; recommended
+  # Maximum video ad duration in seconds.
+  property maxduration : Any
 
-    protocols: Any,
-    # integer array; recommended
-    # Array of supported video protocols. Refer to List 5.8. At least one supported protocol must be specified in either the protocol or protocols attribute.
+  # integer array; recommended
+  # Array of supported video protocols. Refer to List 5.8. At least one supported protocol must be specified in either the protocol or protocols attribute.
+  property protocols : Any
 
-    protocol: Any,
-    # integer; DEPRECATED
-    # NOTE: Deprecatedinfavorofprotocols.
-    # Supported video protocol. Refer to List 5.8. At least one supported protocol must be specified in either the protocol or protocols attribute.
+  # integer; DEPRECATED
+  # Supported video protocol. Refer to List 5.8. At least one supported protocol must be specified in either the protocol or protocols attribute.
+  property protocol : Any
 
-    w: Any,
-    # integer; recommended
-    # Width of the video player in device independent pixels (DIPS).
+  property # NOTE: Deprecatedinfavorofprot ocols
+  # integer; recommended
+  # Width of the video player in device independent pixels (DIPS).
+  property w : Any
 
-    h: Any,
-    # integer; recommended
-    # Height of the video player in device independent pixels (DIPS).
+  # integer; recommended
+  # Height of the video player in device independent pixels (DIPS).
+  property h : Any
 
-    startdelay: Any,
-    # integer; recommended
-    # Indicates the start delay in seconds for pre-roll, mid-roll, or post-roll ad placements. Refer to List 5.12 for additional generic values.
+  # integer; recommended
+  # Indicates the start delay in seconds for pre-roll, mid-roll, or post-roll ad placements. Refer to List 5.12 for additional generic values.
+  property startdelay : Any
 
-    placement: Any,
-    # integer
-    # Placement type for the impression. Refer to List 5.9.
+  # integer
+  # Placement type for the impression. Refer to List 5.9.
+  property placement : Any
 
-    linearity: Any,
-    # integer
-    # Indicates if the impression must be linear, nonlinear, etc. If none specified, assume all are allowed. Refer to List 5.7.
+  # integer
+  # Indicates if the impression must be linear, nonlinear, etc. If none specified, assume all are allowed. Refer to List 5.7.
+  property linearity : Any
 
-    skip: Any,
-    # integer
-    # Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
-    # If a bidder sends markup/creative that is itself skippable, the Bid object should include the attr array with an element of 16 indicating skippable video. Refer to List 5.3.
+  # integer
+  # Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
+  property skip : Any
+  # If a bidder sends markup/creative that is itself skippable, the Bid object should include the attr array with an element of 16 indicating skippable video. Refer to List 5.3.
 
-    skipmin: Any,
-    # integer; default 0
-    # Videos of total duration greater than this number of seconds can be skippable; only applicable if the ad is skippable.
+  # integer; default 0
+  # Videos of total duration greater than this number of seconds can be skippable; only applicable if the ad is skippable.
+  property skipmin : Any
 
-    skipafter: Any,
-    # integer; default 0
-    # Number of seconds a video must play before skipping is enabled; only applicable if the ad is skippable.
+  # integer; default 0
+  # Number of seconds a video must play before skipping is enabled; only applicable if the ad is skippable.
+  property skipafter : Any
 
-    sequence: Any,
-    # integer
-    # If multiple ad impressions are offered in the same bid request, the sequence number will allow for the coordinated delivery of multiple creatives.
+  # integer
+  # If multiple ad impressions are offered in the same bid request, the sequence number will allow for the coordinated delivery of multiple creatives.
+  property sequence : Any
 
-    battr: Any,
-    # integer array
-    # Blocked creative attributes. Refer to List 5.3.
+  # integer array
+  # Blocked creative attributes. Refer to List 5.3.
+  property battr : Any
 
-    maxextended: Any,
-    # integer
-    # Maximum extended ad duration if extension is allowed. If blank or 0, extension is not allowed. If -1, extension is allowed, and there is no time limit imposed. If greater than 0, then the value represents the number of seconds of extended play supported beyond the maxduration value.
+  # integer
+  # Maximum extended ad duration if extension is allowed. If blank or 0, extension is not allowed. If -1, extension is allowed, and there is no time limit imposed. If greater than 0, then the value represents the number of seconds of extended play supported beyond the maxduration value.
+  property maxextended : Any
 
-    minbitrate: Any,
-    # integer
-    # Minimum bit rate in Kbps.
+  # integer
+  # Minimum bit rate in Kbps.
+  property minbitrate : Any
 
-    maxbitrate: Any,
-    # integer
-    # Maximum bit rate in Kbps.
+  # integer
+  # Maximum bit rate in Kbps.
+  property maxbitrate : Any
 
-    boxingallowed: Any,
-    # integer; default 1
-    # Indicates if letter-boxing of 4:3 content into a 16:9 window is allowed, where 0 = no, 1 = yes.
+  # integer; default 1
+  # Indicates if letter-boxing of 4:3 content into a 16:9 window is allowed, where 0 = no, 1  = yes
+  property boxingallowed : Any
 
-    playbackmethod: Any,
-    # integer array
-    # Playback methods that may be in use. If none are specified, any method may be used. Refer to List 5.10. Only one method is typically used in practice. As a result, this array may be converted to an integer in a future version of the specification. It is strongly advised to use only the first element of this array in preparation for this change.
+  # integer array
+  # Playback methods that may be in use. If none are specified, any method may be used. Refer to List 5.10. Only one method is typically used in practice. As a result, this array may be converted to an integer in a future version of the specification. It is strongly advised to use only the first element of this array in preparation for this change.
+  property playbackmethod : Any
 
-    playbackend: Any,
-    # integer
-    # The event that causes playback to end. Refer to List 5.11.
+  # integer
+  # The event that causes playback to end. Refer to List 5.11.
+  property playbackend : Any
 
-    delivery: Any,
-    # integer array
-    # Supported delivery methods (e.g., streaming, progressive). If none specified, assume all are supported. Refer to List 5.15.
+  # integer array
+  # Supported delivery methods (e.g., streaming, progressive). If none specified, assume all are supported. Refer to List 5.15.
+  property delivery : Any
 
-    pos: Any,
-    # integer
-    # Ad position on screen. Refer to List 5.4.
+  # integer
+  # Ad position on screen. Refer to List 5.4.
+  property pos : Any
 
-    companionad: Any,
-    # object array
-    # Array of Banner objects (Section 3.2.6) if companion ads are available.
+  # object array
+  # Array of Banner objects (Section 3.2.6) if companion ads are available.
+  property companionad : Any
 
-    api: Any,
-    # integer array
-    # List of supported API frameworks for this impression. Refer to List 5.6. If an API is not explicitly listed, it is assumed not to be supported.
+  # integer array
+  # List of supported API frameworks for this impression. Refer to List 5.6. If an API is not explicitly listed, it is assumed not to be supported.
+  property api : Any
 
-    companiontype: Any,
-    # integer array
-    # Supported VAST companion ad types. Refer to List 5.14. Recommended if companion Banner objects are included via thecompanionadarray. Ifoneofthesebannerswillbe rendered as an end-card, this can be specified using the vcm attribute with the particular banner (Section 3.2.6).
+  # integer array
+  # Supported VAST companion ad types. Refer to List 5.14. Recommended if companion Banner objects are included via thecompanionadarray. Ifoneofthesebannerswillbe rendered as an end-card, this can be specified using the vcm attribute with the particular banner (Section 3.2.6).
+  property companiontype : Any
 
-    ext: Any,
-    # object
-    # Placeholder for exchange-specific extensions to OpenRTB.
-)
+  # object
+  # Placeholder for exchange-specific extensions to OpenRTB.
+  property ext : Any
 end

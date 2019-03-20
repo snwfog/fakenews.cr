@@ -1,55 +1,55 @@
+require "../distribution_channel"
+
 class Site < DistributionChannel
-  JSON.mapping(
-    id: Any,
-    # string; recommended
-    # Exchange-specific site ID.
+  # string; recommended
+  # Exchange-specific site ID.
+  property id : Any
 
-    name: Any,
-    # string
-    # Site name (may be aliased at the publisher’s request).
+  # string
+  # Site name (may be aliased at the publisher’s request).
+  property name : Any
 
-    domain: Any,
-    # string
-    # Domain of the site (e.g., “mysite.foo.com”).
+  # string
+  # Domain of the site (e.g., “mysite.foo.com”).
+  property domain : Any
 
-    cat: Any,
-    # string array
-    # Array of IAB content categories of the site. Refer to List 5.1.
+  # string array
+  # Array of IAB content categories of the site. Refer to List 5.1.
+  property cat : Any
 
-    sectioncat: Any,
-    # string array
-    # Array of IAB content categories that describe the current section of the site. Refer to List 5.1.
+  # string array
+  # Array of IAB content categories that describe the current section of the site. Refer to List 5.1.
+  property sectioncat : Any
 
-    pagecat: Any,
-    # string array
-    # Array of IAB content categories that describe the current page or view of the site. Refer to List 5.1.
+  # string array
+  # Array of IAB content categories that describe the current page or view of the site. Refer to List 5.1.
+  property pagecat : Any
 
-    page: Any,
-    # string
-    # URL of the page where the impression will be shown.
+  # string
+  # URL of the page where the impression will be shown.
+  property page : Any
 
-    ref: Any,
-    # string
-    # Referrer URL that caused navigation to the current page.
+  # string
+  # Referrer URL that caused navigation to the current page.
+  property ref : Any
 
-    search: Any,
-    # string
-    # Search string that caused navigation to the current page.
+  # string
+  # Search string that caused navigation to the current page.
+  property search : Any
 
-    mobile: Any,
-    # integer
-    # Indicates if the site has been programmed to optimize layout when viewed on mobile devices, where 0 = no, 1 = yes.
+  # integer
+  # Indicates if the site has been programmed to optimize layout when viewed on mobile devices, where 0 = no, 1 = yes.
+  property mobile : Any
 
-    privacypolicy: Any,
-    # integer
-    # Indicates if the site has a privacy policy, where 0 = no, 1 = yes.
+  # integer
+  # Indicates if the site has a privacy policy, where 0 = no, 1 = yes.
+  property privacypolicy : Any
 
-    keywords: Any,
-    # string
-    # Comma separated list of keywords about the site.
+  # string
+  # Comma separated list of keywords about the site.
+  property keywords : Any
 
-    ext: Any,
-    # object
-    # Placeholder for exchange-specific extensions to OpenRTB.
-  )
+  # object
+  # Placeholder for exchange-specific extensions to OpenRTB.
+  property ext : Any
 end
