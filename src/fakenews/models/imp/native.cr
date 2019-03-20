@@ -1,6 +1,6 @@
 require "json"
 
-module FakeNews
+module Fakenews
   class Native
     include JSON::Serializable
     # string; required

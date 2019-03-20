@@ -6,7 +6,7 @@ require "faker"
 
 require "./models/request"
 
-module FakeNews
+module Fakenews
   class Cmd < Cli::Supercommand
     # command "generate", default: true
 
@@ -23,7 +23,7 @@ module FakeNews
 
       def run
         puts "Here is a new request"
-        puts Request.new.to_json
+        puts Request.new.to_pretty_json
       end
 
       # @deprecated

@@ -6,7 +6,7 @@ require "./audio"
 require "./native"
 require "./pmp"
 
-module FakeNews
+module Fakenews
   class Imp
     include JSON::Serializable
     # string; required

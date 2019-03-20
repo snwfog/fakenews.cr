@@ -1,7 +1,7 @@
 require "json"
 require "./data"
 
-module FakeNews
+module Fakenews
   class User
     include JSON::Serializable
     # string; recommended

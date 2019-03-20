@@ -1,7 +1,7 @@
 require "json"
 require "../lists/rtb_2_3"
 
-module FakeNews
+module Fakenews
   class Banner
     include JSON::Serializable
 

@@ -1,4 +1,4 @@
-module FakeNews
+module Fakenews
   # 5.2
   enum BannerAdType
     XHTMLTextAd   = 1

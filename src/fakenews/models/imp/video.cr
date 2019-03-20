@@ -1,6 +1,6 @@
 require "json"
 
-module FakeNews
+module Fakenews
   class Video
     include JSON::Serializable
     # string array; required

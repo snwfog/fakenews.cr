@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe FakeNews do
+describe Fakenews do
   # TODO: Write tests
 
   it "works" do

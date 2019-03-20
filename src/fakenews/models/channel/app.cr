@@ -1,7 +1,7 @@
 require "json"
 require "./channel"
 
-module FakeNews
+module Fakenews
   class App < Channel
     include JSON::Serializable
     # string

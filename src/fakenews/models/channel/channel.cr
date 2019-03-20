@@ -1,6 +1,6 @@
 require "json"
 
-module FakeNews
+module Fakenews
   class Channel
     include JSON::Serializable
 
