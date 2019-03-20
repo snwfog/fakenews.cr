@@ -4,22 +4,26 @@ require "cli"
 require "sqlite3"
 require "faker"
 
-module Fakenews
+require "./models/request"
+
+module FakeNews
   class Cmd < Cli::Supercommand
     # command "generate", default: true
 
     class Generate < Cli::Command
-      @cache_path : String
-      @connection_addr : String
+      # property cache_path : String
+      # property connection_addr : String
 
-      def initialize(*args)
-        super
+      # def initialize(*args)
+      #   super
 
         # @cache_path = "#{CACHE_DIR}/#{CACHE_FILE}"
         # @connection_addr = "sqlite3://#{@cache_path}"
-      end
+      # end
 
       def run
+        puts "Here is a new request"
+        puts Request.new.to_json
       end
 
       # @deprecated
