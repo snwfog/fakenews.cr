@@ -81,3 +81,35 @@ class BidRequest
     ext: Ext,
   )
 end
+
+class Source
+  JSON.mapping(
+    # Integer; recommended
+    # Entity responsible for the final impression sale decision, where 0 = exchange, 1 = upstream source.
+    fd: Int32,
+
+    # string; recommended
+    # Transaction ID that must be common across all participants in this bid request (e.g., potentially multiple exchanges).
+    tid: Int32,
+
+    # string; recommended
+    # Payment ID chain string containing embedded syntax described in the TAG Payment ID Protocol v1.0.
+    pchain: String,
+
+    # object
+    # Placeholder for exchange-specific extensions to OpenRTB.
+    ext: Any,
+  )
+end
+
+class Reg
+  JSON.mapping(
+    # integer
+    # Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes. Refer to Section 7.5 for more information.
+    coppa: Int8,
+
+    # object
+    # Placeholder for exchange-specific extensions to OpenRTB.
+    ext: Any,
+  )
+end
