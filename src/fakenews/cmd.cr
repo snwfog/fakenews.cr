@@ -15,11 +15,15 @@ module Fakenews
       def initialize(*args)
         super
 
-        @cache_path = "#{CACHE_DIR}/#{CACHE_FILE}"
-        @connection_addr = "sqlite3://#{@cache_path}"
+        # @cache_path = "#{CACHE_DIR}/#{CACHE_FILE}"
+        # @connection_addr = "sqlite3://#{@cache_path}"
       end
 
       def run
+      end
+
+      # @deprecated
+      def run_with_cache
         cache = create_db
         puts "Creating cache db #{@cache_path}"
 
