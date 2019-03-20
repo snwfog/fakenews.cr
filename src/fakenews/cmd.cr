@@ -24,6 +24,9 @@ module Fakenews
       def run
         puts "Here is a new request"
         puts Request.new.to_pretty_json
+        10.times do
+          puts Faker.rng
+        end
       end
 
       # @deprecated
