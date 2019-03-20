@@ -18,7 +18,7 @@ module FakeNews
     # object array; required
     # Array of Imp objects (Section 3.2.4) representing the impressionsoffered. Atleast1Impobjectisrequired.
     @[JSON::Field(key: "imp")]
-    property imps : Array(Imp)
+    property imps = [] of Imp
 
     # object; recommended
     # Details via a Site object (Section 3.2.13) about the publisher’s website. Only applicable and recommended for websites.
