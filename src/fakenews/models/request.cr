@@ -1,5 +1,7 @@
+require "random"
 require "json"
 
+require "./list"
 require "./imp"
 require "./device"
 require "./user"
@@ -13,7 +15,7 @@ module Fakenews
     # required
     # Unique ID of the bid request, provided by the exchange.
     @[JSON::Field(key: "id")]
-    property id : Int64
+    property id : String?
 
     # object array; required
     # Array of Imp objects (Section 3.2.4) representing the impressionsoffered. Atleast1Impobjectisrequired.
@@ -42,13 +44,16 @@ module Fakenews
 
     # integer; default 0
     # Indicator of test mode in which auctions are not billable, where 0 = live mode, 1 = test mode.
-    @[JSON::Field(key: "test")]
+    @[JSON::Field(key: "test", ignore: true)]
     property test : Int8
 
     # integer; default 2
-    # Auction type, where 1 = First Price, 2 = Second Price Plus. Exchange-specific auction types can be defined using values greater than 500.
+    # Auction type,
+    # 1 = First Price
+    # 2 = Second Price Plus.
+    # Exchange-specific auction types can be defined using values greater than 500.
     @[JSON::Field(key: "at")]
-    property auction_type : Int64
+    property auction_type = 2
 
     # integer
     # Maximum time in milliseconds the exchange allows for bids to be received including Internet latency to avoid timeout. This value supersedes String a priori guidance from the exchange.
@@ -67,13 +72,13 @@ module Fakenews
 
     # integer; default 0
     # Flag to indicate if Exchange can verify that the impressions offered represent all of the impressions available in context (e.g., all on the web page, all video spots such as pre/mid/post roll) to support road-blocking. 0 = no or unknown, 1 = yes, the impressions offered represent all that are available.
-    @[JSON::Field(key: "allimps")]
+    @[JSON::Field(key: "allimps", ignore: true)]
     property allimps : Int8
 
     # string array
     # Array of allowed currencies for bids on this bid request using ISO-4217 alpha codes. Recommended only if the exchange accepts multiple currencies.
     @[JSON::Field(key: "cur")]
-    property currencies = [] of String
+    property currencies = ["USD"]
 
     # string array
     # White list of languages for creatives using ISO-639-1-alpha-2. Omission implies no specific restrictions, but buyers would be advised to consider language attribute in the Device and/or Content objects if available.
@@ -88,12 +93,12 @@ module Fakenews
     # string array
     # Block list of advertisers by their domains (e.g., “ford.com”).
     @[JSON::Field(key: "badv")]
-    property badvs  = [] of String
+    property badvs = [] of String
 
     # string array
     # Block list of applications by their platform-specific exchange- independent application identifiers. On Android, these should be bundle or package names (e.g., com.foo.mygame). On iOS, these are numeric IDs.
     @[JSON::Field(key: "bapp")]
-    property bapps  = [] of String
+    property bapps = [] of String
 
     # object
     # A Sorce object (Section 3.2.2) that provides data about the inventory source and which entity makes the final decision.
@@ -109,6 +114,13 @@ module Fakenews
     # Placeholder for exchange-specific extensions to OpenRTB.
     @[JSON::Field(key: "ext")]
     property ext : String?
+
+    def self.fake
+      new.tap do |req|
+        req.id = Random::Secure.urlsafe_base64
+        req.imps = [1, 2, 3].map { Imp.fake }
+      end
+    end
   end
 
   class Source

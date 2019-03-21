@@ -1,5 +1,5 @@
 require "json"
-require "../lists/rtb_2_3"
+require "../list"
 
 module Fakenews
   class Banner
@@ -92,18 +92,18 @@ module Fakenews
 
     # integer
     # Width in device independent pixels (DIPS).
-    @[JSON::Field(key: "")]
-    property w : String
+    @[JSON::Field(key: "w")]
+    property w : Int32
 
     # integer
     # Height in device independent pixels (DIPS).
-    @[JSON::Field(key: "")]
-    property h : String
+    @[JSON::Field(key: "h")]
+    property h : Int32
 
     # integer
     # Relative width when expressing size as a ratio.
-    @[JSON::Field(key: "")]
-    property wratio : String
+    @[JSON::Field(key: "wratio")]
+    property wratio : Int32
 
     # integer
     # Relative height when expressing size as a ratio.

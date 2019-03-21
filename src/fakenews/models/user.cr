@@ -10,7 +10,7 @@ module Fakenews
     property id : String
 
     # string; recommended
-    # Buyer-specific ID for the user as mapped by the exchange for thebuyer. Atleastoneofbuyeruidoridisrecommended.
+    # Buyer-specific ID for the user as mapped by the exchange for the buyer. At least one of buyeruid or id is recommended.
     @[JSON::Field(key: "")]
     property buyeruid : String
 
