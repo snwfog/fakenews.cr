@@ -6,7 +6,7 @@ module Fakenews
     include JSON::Serializable
     # string; recommended
     # Exchange-specific site ID.
-    @[JSON::Field(key: "")]
+    @[JSON::Field(key: "id")]
     property id : String
 
     # string

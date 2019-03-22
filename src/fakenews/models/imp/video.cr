@@ -20,7 +20,7 @@ module Fakenews
 
     # integer array; recommended
     # Array of supported video protocols. Refer to List 5.8. At least one supported protocol must be specified in either the protocol or protocols attribute.
-    @[JSON::Field(key: "")]
+    @[JSON::Field(key: "protocols")]
     property protocols : String
 
     # integer; DEPRECATED

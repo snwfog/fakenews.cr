@@ -1,7 +1,8 @@
 module Fakenews
   # 5.2
   enum BannerAdType
-    XHTMLTextAd   = 1
+    XHTMLTextAd = 1
+
     XHTMLBannerAd
     JavascriptAd
     Iframe
@@ -9,7 +10,8 @@ module Fakenews
 
   # 5.3
   enum CreativeAttribute
-    AudioAdAutoPlay                                = 1
+    AudioAdAutoPlay = 1
+
     AudioAdUserInitiated
     ExpandableAutomatic
     ExpandableUserInitiatedClick
@@ -30,32 +32,45 @@ module Fakenews
 
   # 5.4
   enum AdPosition
-    Unknown      = 0
+    Unknown = 0
+
     AboveTheFold
     Deprecated # - May or may not be initially visible depending on screen size/resolution.
     BelowTheFold
     Header
     Footer
     Sidebar
-    Full    Screen
+    FullScreen
   end
 
   # 5.5
   enum ExpandableDirection
-    Left  = 1
+    Left = 1
+
     Right
     Up
     Down
-    Full    Screen
+    FullScreen
   end
 
   # 5.6
   enum APIFrameworks
     VPAID_1_0 = 1
+
     VPAID_2_0
     MRAID_1
     ORMMA
     MRAID_2
     MRAID_3
+  end
+
+  enum VideoProtocol
+    VAST_1_0 = 1
+
+    VAST_2_0
+    VAST_3_0
+    VAST_1_0_Wrapper
+    VAST_2_0_Wrapper
+    VAST_3_0_Wrapper
   end
 end

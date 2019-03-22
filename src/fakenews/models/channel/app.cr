@@ -32,7 +32,7 @@ module Fakenews
 
     # string array
     # Array of IAB content categories of the app. Refer to List 5.1.
-    @[JSON::Field(key: "")]
+    @[JSON::Field(key: "cat")]
     property cat : String
 
     # string array

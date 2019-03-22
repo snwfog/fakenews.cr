@@ -5,7 +5,7 @@ module Fakenews
     include JSON::Serializable
     # string; required
     # Request payload complying with the Native Ad Specification.
-    @[JSON::Field(key: "")]
+    @[JSON::Field(key: "request")]
     property request : String
 
     # string; recommended

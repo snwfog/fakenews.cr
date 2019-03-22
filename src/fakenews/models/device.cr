@@ -26,12 +26,12 @@ module Fakenews
 
     # string; recommended
     # IPv4 address closest to device.
-    @[JSON::Field(key: "")]
+    @[JSON::Field(key: "ip")]
     property ip : String
 
     # string
     # IP address closest to device as IPv6.
-    @[JSON::Field(key: "")]
+    @[JSON::Field(key: "ipv6")]
     property ipv6 : String
 
     # integer
